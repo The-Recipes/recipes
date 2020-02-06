@@ -1,0 +1,12 @@
+$body-color: red;
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+
+body {
+  font-family: 'Roboto Slab', serif;
+  background-color: #f1f1f1;
+}
+
+.recipe-list {
+  width: 97%;
+  margin: 0 auto;
+}

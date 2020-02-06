@@ -1,5 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+var LiveReloadPlugin = require('webpack-livereload-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -10,13 +11,16 @@ module.exports = {
   module: {
     rules: [
       { test: /\.(js)$/, use: 'babel-loader' },
-      { test: /\.css$/, use: ['style-loader', 'css-loader']}
+      { test: /\.(s*)css$/, use: ['style-loader', 'css-loader', 'sass-loader']}
     ]
   },
   mode: 'development',
+  // plugins: [
+  //   new HTMLWebpackPlugin({
+  //     template: 'public/index.html'
+  //   })
+  // ]
   plugins: [
-    new HTMLWebpackPlugin({
-      template: 'src/index.html'
-    })
+    new LiveReloadPlugin()
   ]
 }

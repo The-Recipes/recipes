@@ -1,0 +1,47 @@
+@mixin previewDescription($weight, $size) {
+   display: flex;
+   align-items: center;
+   font-weight: $weight;
+   font-size: $size;
+   height: 50px;
+   width: 80%;
+   margin: 0 auto;
+}
+
+.preview-list {
+   display: flex;
+   justify-content: space-evenly;
+
+   .preview-container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      width: 24%;
+      height: 400px;
+      background-color: white;
+   
+      .preview-picture {
+         object-fit: cover;
+         width: 100%;
+         height: 260px;
+         border: 1px solid blue;
+      }
+
+      .preview-category {
+         position: absolute;
+         bottom: 365px;
+         margin-left: 31px;
+         border: 1px solid orange;
+      }
+
+      .preview-name {
+         border: 1px solid red;
+         @include previewDescription(700,18px)
+      }
+      .preview-shortDescription {
+         border: 1px solid green;
+         @include previewDescription(200,12px)
+      }
+   }
+}
+
