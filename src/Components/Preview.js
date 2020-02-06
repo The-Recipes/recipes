@@ -8,7 +8,9 @@ function Preview(props) {
       {previews.map(preview => (
         <div className="preview-container">
           <img className="preview-picture" src={preview.picture} />
-          <p className="preview-category">{preview.category}</p>
+          <div className="preview-category-container">
+            <p className="preview-category">{preview.category}</p>
+          </div>
           <p className="preview-name">{preview.name}</p>
           <p className="preview-shortDescription">{preview.shortDescription}</p>
         </div>

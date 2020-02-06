@@ -1,46 +1,55 @@
 @mixin previewDescription($weight, $size) {
    display: flex;
-   align-items: center;
+   // align-items: center;
    font-weight: $weight;
    font-size: $size;
    height: 50px;
-   width: 80%;
+   width: 90%;
    margin: 0 auto;
 }
 
 .preview-list {
    display: flex;
    justify-content: space-evenly;
+   flex-wrap: wrap;
 
    .preview-container {
       display: flex;
       flex-direction: column;
-      flex-wrap: wrap;
       width: 24%;
       height: 400px;
       background-color: white;
+      margin: 8px 0px;
    
       .preview-picture {
          object-fit: cover;
          width: 100%;
          height: 260px;
-         border: 1px solid blue;
+         margin-bottom: -10px;
       }
 
-      .preview-category {
-         position: absolute;
-         bottom: 365px;
-         margin-left: 31px;
-         border: 1px solid orange;
+      .preview-category-container {
+         .preview-category {
+            margin-top: -100px;
+            margin-left: 22px;
+            display: inline-block;
+            padding: 6px 8px;
+            background-color: rgb(48,162,204);
+            color: white;
+            font-size: 12px;
+            border: 0.5px solid white;
+            &:hover {
+               background-color: rgb(34, 110, 139)
+            }
+         }
       }
-
       .preview-name {
-         border: 1px solid red;
-         @include previewDescription(700,18px)
+         @include previewDescription(700,18px);
+         // border: 1px solid black;
       }
       .preview-shortDescription {
-         border: 1px solid green;
-         @include previewDescription(200,12px)
+         @include previewDescription(100,13px);
+         margin-top: 5px;
       }
    }
 }
