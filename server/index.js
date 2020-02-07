@@ -3,7 +3,7 @@ const app = express();
 const PORT = 4000;
 const path = require('path')
 
-app.use(express.static(path.join(__dirname, './public')))
+app.use(express.static(path.join(__dirname, '../public')))
 
 app.get('/', (req,res) => res.send("Hello World!"))
 
